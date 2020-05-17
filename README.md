@@ -4,6 +4,7 @@ Few examples of implementing multi-threading in Java. The output may vary for di
 ## Packages Used
 ```bash
 java.util.concurrent
+java.net
 ```
 
 ## Multi-Threading
@@ -19,3 +20,6 @@ An example that illustrates a deadlock by making two threads acquire access to t
 
 ## Producer-Consumer Problem
 Producer-Consumer problem is solved using by synchronization, which enforces mutual exclusion, preventing deadlock. The `produce`r produces the items and puts them on the shared `buffer`. The different `consumer` threads then consume the items of the `buffer` if the `buffer` is not empty, else they wait for the `producer` to produce more items. It cannot be determined which item will be consumed by which thread and depends completely on how the OS schedules the threads.
+
+## Multi-threading in Networking
+A simple example of multi-threading in `TCP client-server` socket model. The `client` connects to the `server` and each `client` is handled on a new thread. The `server` echoes the message to the `client`. Due to multi-threading, none of the clients are blocked by each other and `client` closes the connection upon `exit` or 5 second `time-out`.
